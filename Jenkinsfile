@@ -26,7 +26,7 @@ pipeline {
     }
 
     environment {
-        GIT_URL = "https://github.com/SuHyunKKim/k8s-backend-user.git"
+        GIT_URL = "https://github.com/SuHyunKKim/k8s-api-gateway.git"
         GITHUB_CREDENTIAL = "github-token"
         ARTIFACTS = "build/libs/**"
         DOCKER_REGISTRY = "suhyunkim7288"
