@@ -23,7 +23,9 @@ spec:
         - containerPort: 8080
         volumeMounts:
           - mountPath: /etc/config
-            name: backend-user-config-volume
+            name: api-gateway-config-volume
+          - mountPath: /etc/secret
+            name: api-gateway-secret-volume
 
       volumes:
         - name: api-gateway-config-volume
@@ -32,3 +34,9 @@ spec:
             items:
               - key: application-dev.yml
                 path: application-dev.yml
+        - name: api-gateway-secret-volume
+          secret:
+            secretName: api-gateway-secret
+            items:
+              - key: application-secret.yml
+                path: application-secret.yml
